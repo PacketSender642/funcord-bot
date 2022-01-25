@@ -4,6 +4,8 @@
 #include <assert.h>
 #include <orca/discord.h>
 
+#include "commands.c"
+
 void on_ready(struct discord *client)
 {
     const struct discord_user *bot = discord_get_self(client);
