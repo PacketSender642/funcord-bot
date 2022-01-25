@@ -44,6 +44,8 @@ int main(int argc, char *argv[])
     struct discord *client = discord_config_init(config_file);
     assert(NULL != client && "Couldn't initialize client");
 
+    discord_set_on_command(client, "about", &on_about);
+
     discord_set_on_ready(client, &on_ready);
 
     discord_run(client);

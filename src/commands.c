@@ -1,4 +1,4 @@
-void on_static(struct discord *client, const struct discord_message *msg)
+void on_about(struct discord *client, const struct discord_message *msg)
 {
     if (msg->author->bot) return;
 
