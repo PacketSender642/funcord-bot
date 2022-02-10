@@ -8,4 +8,4 @@ idk
 im good!
 
 # discord:
-[Join meeee](https://discord.gg/ARFNSsRRcE)
+[Join meeee](https://discord.gg/ARFNSsRRcE) (not done)
