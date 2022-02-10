@@ -1,11 +1,8 @@
 # funcord
-This is the git for my bot funcord!
+This is the git for my discord bot funcord!
 
 # How to build?
-idk
-
-# how are you
-im good!
+Not done
 
 # discord:
-[Join meeee](https://discord.gg/ARFNSsRRcE) (not done)
+[Join meeee](https://discord.gg/ARFNSsRRcE)

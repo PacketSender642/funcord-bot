@@ -3,32 +3,11 @@
 #include <string.h>
 #include <assert.h>
 #include <orca/discord.h>
+#include <orca/cee-utils.h>
 
 #include "commands.c"
 
-void on_ready(struct discord *client)
-{
-    const struct discord_user *bot = discord_get_self(client);
-
-    log_info("Succesfully connected to Discord as %s#%s!",
-            bot->username, bot->discriminator);
-    discord_set_presence(client, &(struct discord_presence_status){
-                        .activities =
-                        (struct discord_activity *[]){
-                            &(struct discord_activity){
-                            .name = "with you!",
-                            .type = DISCORD_ACTIVITY_GAME,
-                            .details = "Fixing some bugs",
-                            },
-                            NULL
-                        },
-                        .status = "idle",
-                        .afk = false,
-                        .since = discord_timestamp(client),
-                    });
-}
-
-
+#include "events.c"
 
 int main(int argc, char *argv[])
 {
@@ -46,7 +25,11 @@ int main(int argc, char *argv[])
     struct discord *client = discord_config_init(config_file);
     assert(NULL != client && "Couldn't initialize client");
 
+    // misc
     discord_set_on_command(client, "about", &on_about);
+    discord_set_on_command(client, "ping", &on_ping);
+    discord_set_on_command(client, "help", &on_help);
+    // misc
 
     discord_set_on_ready(client, &on_ready);
 
